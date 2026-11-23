@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Book Watch</title>
+  <meta name="description" content="Watches second-hand book sites and tells you when a listing comes in under your price.">
+  <meta name="theme-color" content="#faf6f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#18141c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Book Watch">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Book Watch</h1>
+      <p class="status" id="status">Loading…</p>
+    </div>
+    <button class="icon-btn" id="refresh" aria-label="Refresh">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <div id="notices"></div>
+    <div id="watches"></div>
+    <button class="add-watch" id="add-watch" hidden>+ Watch something else</button>
+
+    <details class="settings" id="settings">
+      <summary>Settings</summary>
+
+      <section>
+        <h3>Notifications on this phone</h3>
+        <div id="notify-panel"></div>
+      </section>
+
+      <section>
+        <h3>Editing key</h3>
+        <p class="hint">Anyone can see the listings. Changing a watch or turning on notifications needs the editing key you were given. Paste it once on this phone.</p>
+        <div class="key-row">
+          <input type="password" id="token" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…">
+          <button class="btn" id="save-token">Save</button>
+        </div>
+        <p class="hint" id="token-status"></p>
+      </section>
+    </details>
+  </main>
+
+  <dialog id="editor">
+    <form method="dialog" id="editor-form">
+      <header class="sheet-head">
+        <h2 id="editor-title">Edit watch</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+
+      <label>Name
+        <input name="watchName" required placeholder="Direbound (FairyLoot edition)">
+      </label>
+      <label>Search for
+        <input name="query" required placeholder="direbound">
+      </label>
+      <label>Maximum price (£)
+        <input name="maxPrice" type="number" inputmode="decimal" min="1" step="0.5" required>
+        <span class="hint">Compared with the price including postage where the site shows it. Vinted's postage is extra.</span>
+      </label>
+      <label>Tell me about
+        <select name="alertOn">
+          <option value="strong">Only listings with a "definitely" word</option>
+          <option value="possible">"Definitely" or "maybe" words</option>
+          <option value="any">Anything under my price</option>
+        </select>
+      </label>
+      <label>Listing title must contain
+        <input name="mustInclude" placeholder="direbound">
+        <span class="hint">Separate with commas. Spaces don't matter, so "direbound" also matches "Dire Bound".</span>
+      </label>
+      <label>"Definitely" words
+        <textarea name="strong" rows="2" placeholder="fairyloot"></textarea>
+        <span class="hint">Checked in the title and, on Vinted and AbeBooks, the description.</span>
+      </label>
+      <label>"Maybe" words
+        <textarea name="possible" rows="2" placeholder="special edition, sprayed"></textarea>
+      </label>
+      <label>Ignore listings whose title has
+        <textarea name="exclude" rows="3" placeholder="furybound, bundle"></textarea>
+      </label>
+      <fieldset>
+        <legend>Sites</legend>
+        <div class="checks" id="site-checks"></div>
+      </fieldset>
+      <label class="switch">
+        <input type="checkbox" name="paused"> Pause this watch
+      </label>
+
+      <div class="sheet-actions">
+        <button type="button" class="btn danger" id="delete-watch">Delete</button>
+        <button type="submit" class="btn primary" id="save-watch">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

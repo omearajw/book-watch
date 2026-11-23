@@ -22,3 +22,17 @@ export async function search(query) {
   }
   return { status, listings };
 }
+
+// The catalog page has no description or seller info. Sellers often say "FairyLoot" only in
+// the description, so candidate listings get their item page read once.
+export async function details(listing) {
+  const { status, body } = await get(listing.url);
+  if (status !== 200) return null;
+  const seller = body.match(/\\"feedback_count\\":(\d+),\\"feedback_reputation\\":([\d.]+)/);
+  return {
+    description: decode(body.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ''),
+    sellerReviews: seller ? Number(seller[1]) : null,
+    sellerStars: seller ? Math.round(Number(seller[2]) * 50) / 10 : null,
+    reserved: /\\"is_reserved\\":true/.test(body),
+  };
+}
