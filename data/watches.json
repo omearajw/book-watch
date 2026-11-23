@@ -35,7 +35,7 @@
         "owlcrate",
         "bewitched"
       ],
-      "maxPrice": 40,
+      "maxPrice": 41,
       "alertOn": "possible",
       "sites": [
         "vinted",
