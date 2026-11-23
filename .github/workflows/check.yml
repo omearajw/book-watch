@@ -2,7 +2,8 @@ name: Check listings
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    # Off the quarter hours: GitHub delays or drops scheduled runs at busy times, worst on the hour.
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
   # Edits from the website are pushed with her token, which does trigger workflows, so a new
   # watch or a newly added phone is checked straight away. The checker's own commits use
