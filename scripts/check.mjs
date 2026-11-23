@@ -1,9 +1,10 @@
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile, mkdir } from 'fs/promises';
+import { dirname } from 'path';
 import { createHash } from 'crypto';
 import { sites } from '../src/sites/index.mjs';
 import { classify } from '../src/match.mjs';
 import { pushReady, sendPush, emailReady, sendEmail } from '../src/notify.mjs';
-import { LOOKS_LIKE, embedFile, bestMatch } from '../src/photo.mjs';
+import { embed, scorePhotos } from '../src/photo.mjs';
 import { config } from '../docs/config.js';
 
 const DRY = process.argv.includes('--dry-run');
@@ -37,6 +38,43 @@ const matches = { watches: {} };
 const alerts = [];
 let detailBudget = DETAIL_LIMIT;
 
+async function readDetails(listing, seen) {
+  const site = sites[listing.source];
+  if (!site?.details || detailBudget <= 0) return false;
+  detailBudget--;
+  await sleep(1000);
+  const d = await site.details(listing).catch(() => null);
+  if (!d) return false;
+  seen.details = d;
+  Object.assign(listing, d);
+  return true;
+}
+
+// The website builds the same path to show the example in the watch editor.
+const wrongCoverPath = (watchId, listingId) => `data/photos/not/${watchId}-${listingId.replace(/[^a-z0-9]+/gi, '-')}.jpg`;
+
+// A listing marked "Not this cover" is kept as an example: the photo of it that looks most like
+// the references, which is the one that earned the badge. Returns that photo's bytes.
+async function saveWrongCover(watch, id, listing, loadRefs) {
+  const seen = state.seen[id];
+  if (!listing || !seen) {
+    console.log(`${watch.id}: ${id} is marked "not this cover" but isn't listed now; saved if it reappears`);
+    return null;
+  }
+  if (!seen.details?.photos && !(await readDetails(listing, seen))) return null;
+  const r = await scorePhotos(seen.details.photos, await loadRefs());
+  if (!r) {
+    delete seen.details.photos;
+    return null;
+  }
+  if (!DRY) {
+    await mkdir(dirname(wrongCoverPath(watch.id, id)), { recursive: true });
+    await writeFile(wrongCoverPath(watch.id, id), r.best);
+  }
+  console.log(`${watch.id}: ${DRY ? 'would save' : 'saved'} ${id} as a wrong cover (it scored ${r.score})`);
+  return r.best;
+}
+
 for (const watch of watches) {
   if (watch.paused) {
     matches.watches[watch.id] = { paused: true, sites: {}, listings: [] };
@@ -56,17 +94,28 @@ for (const watch of watches) {
     }
   }
 
-  // Scores are cached per listing against a fingerprint of the reference photos, so
-  // replacing a photo rescores everything and an unchanged set costs nothing.
-  let refsKey = null;
-  let refVectors = null;
-  const loadRefs = () => (refVectors ??= Promise.all(watch.photos.map(embedFile)));
+  // Scores are cached per listing against a fingerprint of the reference photos and the
+  // wrong-cover examples, so changing either rescores everything and an unchanged set costs nothing.
+  const notThis = new Set(watch.notThis ?? []);
+  let photoKey = null;
+  let loadVectors;
   if (watch.photos?.length) {
     try {
-      const files = await Promise.all(watch.photos.map(p => readFile(p)));
-      refsKey = hash(files.map(f => hash(f)).join());
+      const refFiles = await Promise.all(watch.photos.map(p => readFile(p)));
+      let refVectors;
+      const loadRefs = () => (refVectors ??= Promise.all(refFiles.map(embed)));
+      const wrongFiles = [];
+      for (const id of notThis) {
+        const buffer = await readFile(wrongCoverPath(watch.id, id)).catch(() => null)
+          ?? await saveWrongCover(watch, id, found.get(id), loadRefs);
+        if (buffer) wrongFiles.push(buffer);
+      }
+      photoKey = hash(['v2', ...[...refFiles, ...wrongFiles].map(f => hash(f))].join());
+      let vectors;
+      loadVectors = () => (vectors ??= Promise.all([loadRefs(), Promise.all(wrongFiles.map(embed))]));
     } catch (e) {
-      console.log(`${watch.id}: reference photos unreadable: ${e.message}`);
+      console.log(`${watch.id}: photo matching off: ${e.message}`);
+      photoKey = null;
     }
   }
 
@@ -77,35 +126,27 @@ for (const watch of watches) {
     if (seen.details) Object.assign(listing, seen.details);
 
     let cls = classify(listing, watch);
-    const site = sites[listing.source];
     // Details saved before photos were collected count as missing, so they're read again once.
-    if (cls.relevant && cls.underPrice && !seen.details?.photos && site.details && detailBudget > 0) {
-      detailBudget--;
-      await sleep(1000);
-      const d = await site.details(listing).catch(() => null);
-      if (d) {
-        seen.details = d;
-        Object.assign(listing, d);
-        cls = classify(listing, watch);
-      }
-    }
+    if (cls.relevant && cls.underPrice && !seen.details?.photos && await readDetails(listing, seen)) cls = classify(listing, watch);
 
     const cached = seen.photo?.[watch.id];
-    let photoScore = refsKey && cached?.refs === refsKey ? cached.score : undefined;
-    if (refsKey && photoScore === undefined && cls.relevant && cls.underPrice && listing.photos?.length) {
+    let photo = photoKey && cached?.refs === photoKey ? cached : null;
+    if (photoKey && !photo && cls.relevant && cls.underPrice && listing.photos?.length) {
       try {
-        photoScore = await bestMatch(await loadRefs(), listing.photos);
-        if (photoScore == null) {
+        const [refs, wrong] = await loadVectors();
+        const r = await scorePhotos(listing.photos, refs, wrong);
+        if (!r) {
           // Vinted's photo links are signed and expire; drop them so the item page is read again.
           delete seen.details.photos;
         } else {
-          (seen.photo ??= {})[watch.id] = { refs: refsKey, score: photoScore };
+          photo = (seen.photo ??= {})[watch.id] = { refs: photoKey, score: r.score, looksLike: r.looksLike };
         }
       } catch (e) {
         console.log(`${watch.id}: photo matching failed: ${e.message}`);
-        refsKey = null;
+        photoKey = null;
       }
     }
+    const looksLike = Boolean(photo?.looksLike) && !notThis.has(listing.id);
 
     const cheaperThanLastAlert = seen.alertedPrice == null || listing.total < seen.alertedPrice - 0.005;
     if (cls.alertable && !listing.reserved && cheaperThanLastAlert) alerts.push({ watch, listing, cls, seen });
@@ -126,8 +167,8 @@ for (const watch of watches) {
         sellerStars: listing.sellerStars ?? null,
         sellerReviews: listing.sellerReviews ?? null,
         reserved: listing.reserved ?? false,
-        photoScore: photoScore ?? null,
-        looksLike: (photoScore ?? 0) >= LOOKS_LIKE,
+        photoScore: photo?.score ?? null,
+        looksLike,
         firstSeen: seen.firstSeen,
       });
     }

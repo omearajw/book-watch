@@ -151,9 +151,14 @@ async function loadStatus() {
   }
 }
 
-function listingRow(l) {
+// Same path as scripts/check.mjs, which saves the example there.
+const wrongCoverPath = (watchId, listingId) => `data/photos/not/${watchId}-${listingId.replace(/[^a-z0-9]+/gi, '-')}.jpg`;
+const looksLike = (l, w) => l.looksLike && !(w.notThis ?? []).includes(l.id);
+
+function listingRow(l, w) {
   const badges = [];
-  if (l.looksLike) badges.push('<span class="badge photo">Looks like your photo</span>');
+  const flagged = looksLike(l, w);
+  if (flagged) badges.push('<span class="badge photo">Looks like your photo</span>');
   if (l.strength === 'strong') badges.push(`<span class="badge strong">Mentions “${esc(l.matchedTerm)}”</span>`);
   if (l.strength === 'possible') badges.push(`<span class="badge possible">Maybe: “${esc(l.matchedTerm)}”</span>`);
   if (l.reserved) badges.push('<span class="badge reserved">Reserved</span>');
@@ -162,13 +167,13 @@ function listingRow(l) {
   return `<li class="listing"><a href="${esc(l.url)}" target="_blank" rel="noopener">
     <div class="price">${esc(gbp(l.total))}${postage ? `<small>${esc(postage)}</small>` : ''}</div>
     <div class="body">${badges.join('')}<p class="name">${esc(l.title)}</p><p class="meta">${meta}</p></div>
-  </a></li>`;
+  </a>${flagged ? `<button class="not-this" data-not-this="${esc(l.id)}">Not this cover</button>` : ''}</li>`;
 }
 
 function watchCard(w) {
   const m = matches.watches[w.id] ?? { sites: {}, listings: [] };
   const all = m.listings ?? [];
-  const alerts = all.filter(l => l.alertable || (l.looksLike && l.underPrice));
+  const alerts = all.filter(l => l.alertable || (looksLike(l, w) && l.underPrice));
   const tab = ui.tab[w.id] ?? 'alerts';
   const shown = tab === 'alerts' ? alerts : all;
   const limit = ui.expanded[w.id] ? shown.length : SHOWN;
@@ -206,7 +211,7 @@ function watchCard(w) {
       <button role="tab" data-tab="alerts" aria-selected="${tab === 'alerts'}">Under ${esc(gbp(w.maxPrice))} (${alerts.length})</button>
       <button role="tab" data-tab="all" aria-selected="${tab === 'all'}">All listings (${all.length})</button>
     </div>
-    ${shown.length ? `<ul class="listings">${shown.slice(0, limit).map(listingRow).join('')}</ul>` : `<p class="empty">${esc(emptyText)}</p>`}
+    ${shown.length ? `<ul class="listings">${shown.slice(0, limit).map(l => listingRow(l, w)).join('')}</ul>` : `<p class="empty">${esc(emptyText)}</p>`}
     ${shown.length > limit ? `<button class="more" data-more>Show ${shown.length - limit} more</button>` : ''}
   </article>`;
 }
@@ -333,7 +338,22 @@ function openEditor(watch) {
   form.dataset.id = watch?.id ?? '';
   editorPhotos = (w.photos ?? []).map(path => ({ path, url: rawUrl(path) }));
   renderEditorPhotos();
+  editorNot = [...(w.notThis ?? [])];
+  renderEditorNot();
   $('#editor').showModal();
+}
+
+let editorNot = [];
+
+function renderEditorNot() {
+  const id = $('#editor-form').dataset.id;
+  $('#not-this-set').hidden = !editorNot.length;
+  $('#not-list').innerHTML = editorNot.map((lid, i) =>
+    `<div class="ref-photo"><img src="${esc(rawUrl(wrongCoverPath(id, lid)))}" alt="Wrong cover ${i + 1}"><button type="button" data-remove-not="${i}" aria-label="Forget wrong cover ${i + 1}">×</button></div>`).join('');
+  // The check saves the photo a few minutes after the tap; until then there's nothing to show.
+  for (const img of $('#not-list').querySelectorAll('img')) {
+    img.addEventListener('error', () => img.replaceWith(Object.assign(document.createElement('span'), { className: 'pending', textContent: 'Saved at the next check' })), { once: true });
+  }
 }
 
 // One at a time: parallel deletes on the same branch would conflict with each other.
@@ -393,6 +413,15 @@ function wireEvents() {
       const ok = await saveWatches(ws => ws.map(x => (x.id === id ? { ...x, maxPrice: price } : x)), `Set ${w.name} to ${gbp(price)}`, `Saved. You'll hear about listings under ${gbp(price)}.`);
       if (ok) ui.draftPrice[id] = undefined;
       render();
+    } else if (t.dataset.notThis) {
+      if (!token) { toast('Add the editing key in Settings first.'); return; }
+      const lid = t.dataset.notThis;
+      const addTo = ws => ws.map(x => (x.id === id ? { ...x, notThis: [...new Set([...(x.notThis ?? []), lid])] } : x));
+      const before = watches;
+      watches = addTo(watches);
+      render();
+      const ok = await saveWatches(addTo, 'Mark a listing as the wrong cover', 'Marked as the wrong cover. Listings that look like it lose their badge at the next check.');
+      if (!ok) { watches = before; render(); }
     }
   });
 
@@ -417,6 +446,7 @@ function wireEvents() {
     $('#save-watch').disabled = true;
     const watchId = id || `${slug(fields.name)}-${Math.random().toString(36).slice(2, 6)}`;
     const before = watches.find(x => x.id === id)?.photos ?? [];
+    const notBefore = watches.find(x => x.id === id)?.notThis ?? [];
     try {
       for (const p of editorPhotos.filter(p => p.blob)) {
         p.path = `data/photos/${watchId}-${Math.random().toString(36).slice(2, 8)}.jpg`;
@@ -429,12 +459,16 @@ function wireEvents() {
       return;
     }
     fields.photos = editorPhotos.map(p => p.path);
+    fields.notThis = editorNot;
     const ok = id
       ? await saveWatches(ws => ws.map(x => (x.id === id ? { ...x, ...fields } : x)), `Edit watch: ${fields.name}`, 'Saved. Checking again now; new results in a couple of minutes.')
       : await saveWatches(ws => [...ws, { id: watchId, ...fields }], `Add watch: ${fields.name}`, 'Added. The first results arrive in a couple of minutes.');
     $('#save-watch').disabled = false;
     if (ok) {
-      removePhotoFiles(before.filter(p => !fields.photos.includes(p)));
+      removePhotoFiles([
+        ...before.filter(p => !fields.photos.includes(p)),
+        ...notBefore.filter(lid => !editorNot.includes(lid)).map(lid => wrongCoverPath(watchId, lid)),
+      ]);
       $('#editor').close();
     }
   });
@@ -459,6 +493,12 @@ function wireEvents() {
     editorPhotos.splice(Number(b.dataset.removePhoto), 1);
     renderEditorPhotos();
   });
+  $('#not-list').addEventListener('click', e => {
+    const b = e.target.closest('[data-remove-not]');
+    if (!b) return;
+    editorNot.splice(Number(b.dataset.removeNot), 1);
+    renderEditorNot();
+  });
 
   $('#delete-watch').onclick = async () => {
     const id = $('#editor-form').dataset.id;
@@ -466,7 +506,7 @@ function wireEvents() {
     if (!w || !confirm(`Stop watching “${w.name}”?`)) return;
     const ok = await saveWatches(ws => ws.filter(x => x.id !== id), `Delete watch: ${w.name}`, 'Watch deleted.');
     if (ok) {
-      removePhotoFiles(w.photos ?? []);
+      removePhotoFiles([...(w.photos ?? []), ...(w.notThis ?? []).map(lid => wrongCoverPath(w.id, lid))]);
       $('#editor').close();
     }
   };

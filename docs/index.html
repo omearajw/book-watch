@@ -99,6 +99,11 @@
         <button type="button" class="btn" id="add-photo">Add a photo</button>
         <input type="file" id="photo-input" accept="image/*" multiple hidden>
       </fieldset>
+      <fieldset id="not-this-set" hidden>
+        <legend>Not this cover</legend>
+        <span class="hint">Covers you've marked "Not this cover" on a listing. A listing that looks more like one of these than your photos doesn't get the badge.</span>
+        <div class="photos" id="not-list"></div>
+      </fieldset>
       <fieldset>
         <legend>Sites</legend>
         <div class="checks" id="site-checks"></div>

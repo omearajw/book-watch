@@ -46,6 +46,11 @@
       "paused": false,
       "photos": [
         "data/photos/direbound-fairyloot-1.jpg"
+      ],
+      "notThis": [
+        "vinted:10819525473",
+        "vinted:10409636417",
+        "vinted:10452708638"
       ]
     }
   ]

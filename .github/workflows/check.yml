@@ -55,6 +55,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/state.json data/matches.json
+          # Wrong-cover examples saved from listings marked "Not this cover".
+          if [ -d data/photos/not ]; then git add data/photos/not; fi
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Update listings"
           # Only this workflow writes these two files, so if a rebase still clashes on them,
