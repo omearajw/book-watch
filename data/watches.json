@@ -4,13 +4,45 @@
       "id": "direbound-fairyloot",
       "name": "Direbound (FairyLoot edition)",
       "query": "direbound",
-      "mustInclude": ["direbound"],
-      "strong": ["fairyloot"],
-      "possible": ["special edition", "sprayed", "spayed", "exclusive", "limited edition", "signed"],
-      "exclude": ["furybound", "duology", "bundle", "kindle", "insert", "bookmark", "ebook", "audiobook", "mondlicht", "german", "deutsch", "waterstones", "illumicrate", "owlcrate", "bewitched"],
-      "maxPrice": 40,
+      "mustInclude": [
+        "direbound"
+      ],
+      "strong": [
+        "fairyloot"
+      ],
+      "possible": [
+        "special edition",
+        "sprayed",
+        "spayed",
+        "exclusive",
+        "limited edition",
+        "signed"
+      ],
+      "exclude": [
+        "furybound",
+        "duology",
+        "bundle",
+        "kindle",
+        "insert",
+        "bookmark",
+        "ebook",
+        "audiobook",
+        "mondlicht",
+        "german",
+        "deutsch",
+        "waterstones",
+        "illumicrate",
+        "owlcrate",
+        "bewitched"
+      ],
+      "maxPrice": 41,
       "alertOn": "possible",
-      "sites": ["vinted", "abebooks", "wob", "amazon"],
+      "sites": [
+        "vinted",
+        "abebooks",
+        "wob",
+        "amazon"
+      ],
       "paused": false
     }
   ]
