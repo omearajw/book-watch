@@ -5,7 +5,7 @@
         "vinted": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -38,24 +38,6 @@
           "strength": "other",
           "matchedTerm": null,
           "underPrice": false,
-          "alertable": false,
-          "sellerStars": null,
-          "sellerReviews": null,
-          "reserved": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Amazon",
-          "id": "amazon:B0FGDRDGMG",
-          "title": "Dire Bound: The hottest enemies to lovers fantasy romance of 2025 and SUNDAY TIMES bestseller (The Wolves of Ruin Book 1)",
-          "price": 2.99,
-          "total": 2.99,
-          "postage": "see listing",
-          "condition": null,
-          "url": "https://www.amazon.co.uk/dp/B0FGDRDGMG",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
           "alertable": false,
           "sellerStars": null,
           "sellerReviews": null,
@@ -305,24 +287,6 @@
           "postage": "£ 2.29 shipping",
           "condition": null,
           "url": "https://www.abebooks.co.uk/Direbound-Wolves-Ruin-Sorensen-Sable-Swiftstone/32476589090/bd",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
-          "alertable": false,
-          "sellerStars": null,
-          "sellerReviews": null,
-          "reserved": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Amazon",
-          "id": "amazon:B0G2YJ2KQ8",
-          "title": "Dire Bound. Alma de lobo (Los Lobos de la Ruina 1) (Spanish Edition)",
-          "price": 10.99,
-          "total": 10.99,
-          "postage": "see listing",
-          "condition": null,
-          "url": "https://www.amazon.co.uk/dp/B0G2YJ2KQ8",
           "strength": "other",
           "matchedTerm": null,
           "underPrice": true,
