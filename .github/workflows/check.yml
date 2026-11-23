@@ -25,7 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # Check out the branch tip, not the commit that triggered the run: a run queued behind
+      # another must start from the state that run saved, or the two collide on push.
       - uses: actions/checkout@v7
+        with:
+          ref: main
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -44,8 +48,11 @@ jobs:
           git add data/state.json data/matches.json
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Update listings"
+          # Only this workflow writes these two files, so if a rebase still clashes on them,
+          # this run's newer copy wins (-X theirs is the commit being replayed during a rebase).
           for attempt in 1 2 3; do
-            git pull --rebase && git push && exit 0
+            if git pull --rebase -X theirs && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
             sleep 5
           done
           exit 1
