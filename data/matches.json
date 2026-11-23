@@ -5,9 +5,29 @@
         "vinted": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
+        {
+          "site": "Vinted",
+          "id": "vinted:10819525473",
+          "title": "Dire Bound - Sable Sorenson",
+          "price": 20,
+          "total": 21.7,
+          "postage": "not included",
+          "condition": "New with tags",
+          "url": "https://www.vinted.co.uk/items/10819525473-dire-bound-sable-sorenson",
+          "strength": "other",
+          "matchedTerm": null,
+          "underPrice": true,
+          "alertable": false,
+          "sellerStars": 4.9,
+          "sellerReviews": 128,
+          "reserved": false,
+          "photoScore": 0.65,
+          "looksLike": true,
+          "firstSeen": "2026-11-23"
+        },
         {
           "site": "World of Books",
           "id": "wob:10962463031569",
@@ -24,6 +44,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -42,6 +64,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -60,6 +84,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -78,6 +104,8 @@
           "sellerStars": 4.9,
           "sellerReviews": 302,
           "reserved": false,
+          "photoScore": 0.11,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -96,6 +124,8 @@
           "sellerStars": 5,
           "sellerReviews": 44,
           "reserved": false,
+          "photoScore": 0.13,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -112,8 +142,10 @@
           "underPrice": true,
           "alertable": false,
           "sellerStars": 5,
-          "sellerReviews": 5079,
+          "sellerReviews": 5091,
           "reserved": false,
+          "photoScore": 0.11,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -132,6 +164,8 @@
           "sellerStars": 5,
           "sellerReviews": 65,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -150,6 +184,8 @@
           "sellerStars": 5,
           "sellerReviews": 17,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -166,8 +202,10 @@
           "underPrice": true,
           "alertable": false,
           "sellerStars": 4.9,
-          "sellerReviews": 746,
+          "sellerReviews": 747,
           "reserved": false,
+          "photoScore": 0.12,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -186,6 +224,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -204,6 +244,8 @@
           "sellerStars": 5,
           "sellerReviews": 172,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -220,8 +262,10 @@
           "underPrice": true,
           "alertable": false,
           "sellerStars": 4.9,
-          "sellerReviews": 594,
+          "sellerReviews": 602,
           "reserved": false,
+          "photoScore": 0.12,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -240,6 +284,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -258,6 +304,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -276,6 +324,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -294,6 +344,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -312,6 +364,8 @@
           "sellerStars": 4.9,
           "sellerReviews": 167,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -328,8 +382,10 @@
           "underPrice": true,
           "alertable": false,
           "sellerStars": 4.9,
-          "sellerReviews": 594,
+          "sellerReviews": 602,
           "reserved": false,
+          "photoScore": 0.09,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -348,6 +404,8 @@
           "sellerStars": 5,
           "sellerReviews": 119,
           "reserved": false,
+          "photoScore": 0.12,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -366,6 +424,8 @@
           "sellerStars": 5,
           "sellerReviews": 80,
           "reserved": false,
+          "photoScore": 0.15,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -384,6 +444,8 @@
           "sellerStars": 0,
           "sellerReviews": 0,
           "reserved": false,
+          "photoScore": 0.08,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -402,6 +464,8 @@
           "sellerStars": 5,
           "sellerReviews": 6,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -420,6 +484,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -438,6 +504,8 @@
           "sellerStars": 5,
           "sellerReviews": 9,
           "reserved": false,
+          "photoScore": 0.1,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -456,24 +524,8 @@
           "sellerStars": 5,
           "sellerReviews": 4,
           "reserved": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Vinted",
-          "id": "vinted:10923811444",
-          "title": "Dire Bound - Sable Sorensen",
-          "price": 12,
-          "total": 13.3,
-          "postage": "not included",
-          "condition": "Very good",
-          "url": "https://www.vinted.co.uk/items/10923811444-dire-bound-sable-sorensen",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
-          "alertable": false,
-          "sellerStars": 5,
-          "sellerReviews": 128,
-          "reserved": false,
+          "photoScore": 0.08,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -492,6 +544,8 @@
           "sellerStars": 4.9,
           "sellerReviews": 40,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -510,6 +564,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -528,6 +584,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -546,6 +604,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -564,24 +624,8 @@
           "sellerStars": 4.8,
           "sellerReviews": 227,
           "reserved": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Vinted",
-          "id": "vinted:10819525473",
-          "title": "Dire Bound - Sable Sorenson",
-          "price": 20,
-          "total": 21.7,
-          "postage": "not included",
-          "condition": "New with tags",
-          "url": "https://www.vinted.co.uk/items/10819525473-dire-bound-sable-sorenson",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
-          "alertable": false,
-          "sellerStars": 4.9,
-          "sellerReviews": 128,
-          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -600,6 +644,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -618,6 +664,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -636,6 +684,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -654,6 +704,8 @@
           "sellerStars": 4.9,
           "sellerReviews": 132,
           "reserved": false,
+          "photoScore": 0.13,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -672,6 +724,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -690,6 +744,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -708,6 +764,8 @@
           "sellerStars": 5,
           "sellerReviews": 568,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -724,8 +782,10 @@
           "underPrice": true,
           "alertable": true,
           "sellerStars": 5,
-          "sellerReviews": 188,
+          "sellerReviews": 190,
           "reserved": false,
+          "photoScore": 0.22,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -744,6 +804,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -762,6 +824,8 @@
           "sellerStars": 4.9,
           "sellerReviews": 128,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -780,6 +844,8 @@
           "sellerStars": 5,
           "sellerReviews": 6,
           "reserved": false,
+          "photoScore": 0.12,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -798,6 +864,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -816,6 +884,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -834,6 +904,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -852,6 +924,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -870,6 +944,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -888,6 +964,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -906,6 +984,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -924,6 +1004,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -942,6 +1024,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         },
         {
@@ -960,6 +1044,8 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
           "firstSeen": "2026-11-23"
         }
       ]
