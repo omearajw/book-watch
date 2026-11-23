@@ -66,6 +66,55 @@ async function updateJson(path, mutate, message) {
   throw new Error('Someone else saved at the same moment. Try again.');
 }
 
+const rawUrl = path => `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+const jsonHeaders = () => ({ ...authHeaders(), Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' });
+
+// Redrawing through a canvas shrinks iPhone photos (and HEIC) to a small JPEG and drops the
+// metadata, including location, which matters because the repo is public.
+async function shrinkPhoto(file) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = new Image();
+    img.src = url;
+    await img.decode().catch(() => { throw new Error("Couldn't read that photo. Try a JPEG or PNG."); });
+    const scale = Math.min(1, 1200 / Math.max(img.naturalWidth, img.naturalHeight));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(img.naturalWidth * scale);
+    canvas.height = Math.round(img.naturalHeight * scale);
+    canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+    return await new Promise((resolve, reject) => canvas.toBlob(b => (b ? resolve(b) : reject(new Error("Couldn't read that photo."))), 'image/jpeg', 0.85));
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
+const blobB64 = blob => new Promise((resolve, reject) => {
+  const r = new FileReader();
+  r.onload = () => resolve(String(r.result).split(',')[1]);
+  r.onerror = () => reject(new Error("Couldn't read that photo."));
+  r.readAsDataURL(blob);
+});
+
+async function putFile(path, blob, message) {
+  const content = await blobB64(blob);
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const r = await fetch(`${API}/contents/${path}`, { method: 'PUT', headers: jsonHeaders(), body: JSON.stringify({ message, content, branch }) });
+    if (r.ok) return;
+    if (r.status !== 409) throw new Error(r.status === 403 || r.status === 404 ? "The editing key can't change this repo." : `Couldn't upload the photo (GitHub said ${r.status}).`);
+  }
+  throw new Error('Someone else saved at the same moment. Try again.');
+}
+
+// Best effort: a photo file left behind does no harm once the watch no longer lists it.
+async function deleteFile(path, message) {
+  try {
+    const r = await fetch(`${API}/contents/${path}?ref=${branch}`, { headers: { ...authHeaders(), Accept: 'application/vnd.github+json' }, cache: 'no-store' });
+    if (!r.ok) return;
+    const { sha } = await r.json();
+    await fetch(`${API}/contents/${path}`, { method: 'DELETE', headers: jsonHeaders(), body: JSON.stringify({ message, sha, branch }) });
+  } catch {}
+}
+
 let toastTimer;
 function toast(msg, ms = 3200) {
   const el = $('#toast');
@@ -104,6 +153,7 @@ async function loadStatus() {
 
 function listingRow(l) {
   const badges = [];
+  if (l.looksLike) badges.push('<span class="badge photo">Looks like your photo</span>');
   if (l.strength === 'strong') badges.push(`<span class="badge strong">Mentions “${esc(l.matchedTerm)}”</span>`);
   if (l.strength === 'possible') badges.push(`<span class="badge possible">Maybe: “${esc(l.matchedTerm)}”</span>`);
   if (l.reserved) badges.push('<span class="badge reserved">Reserved</span>');
@@ -118,7 +168,7 @@ function listingRow(l) {
 function watchCard(w) {
   const m = matches.watches[w.id] ?? { sites: {}, listings: [] };
   const all = m.listings ?? [];
-  const alerts = all.filter(l => l.alertable);
+  const alerts = all.filter(l => l.alertable || (l.looksLike && l.underPrice));
   const tab = ui.tab[w.id] ?? 'alerts';
   const shown = tab === 'alerts' ? alerts : all;
   const limit = ui.expanded[w.id] ? shown.length : SHOWN;
@@ -281,7 +331,22 @@ function openEditor(watch) {
     `<label><input type="checkbox" name="site" value="${k}" ${(w.sites ?? []).includes(k) ? 'checked' : ''}> ${esc(name)}</label>`).join('');
   $('#delete-watch').hidden = isNew;
   form.dataset.id = watch?.id ?? '';
+  editorPhotos = (w.photos ?? []).map(path => ({ path, url: rawUrl(path) }));
+  renderEditorPhotos();
   $('#editor').showModal();
+}
+
+// One at a time: parallel deletes on the same branch would conflict with each other.
+async function removePhotoFiles(paths) {
+  for (const path of paths) await deleteFile(path, 'Remove a reference photo');
+}
+
+// Photos are only uploaded when the watch is saved, so closing the editor discards them.
+let editorPhotos = [];
+
+function renderEditorPhotos() {
+  $('#photo-list').innerHTML = editorPhotos.map((p, i) =>
+    `<div class="ref-photo"><img src="${esc(p.url)}" alt="Reference photo ${i + 1}"><button type="button" data-remove-photo="${i}" aria-label="Remove photo ${i + 1}">×</button></div>`).join('');
 }
 
 function readEditor() {
@@ -350,11 +415,49 @@ function wireEvents() {
     const fields = readEditor();
     if (!fields.sites.length) { toast('Pick at least one site.'); return; }
     $('#save-watch').disabled = true;
+    const watchId = id || `${slug(fields.name)}-${Math.random().toString(36).slice(2, 6)}`;
+    const before = watches.find(x => x.id === id)?.photos ?? [];
+    try {
+      for (const p of editorPhotos.filter(p => p.blob)) {
+        p.path = `data/photos/${watchId}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+        await putFile(p.path, p.blob, 'Add a reference photo');
+        delete p.blob;
+      }
+    } catch (err) {
+      toast(err.message, 6000);
+      $('#save-watch').disabled = false;
+      return;
+    }
+    fields.photos = editorPhotos.map(p => p.path);
     const ok = id
       ? await saveWatches(ws => ws.map(x => (x.id === id ? { ...x, ...fields } : x)), `Edit watch: ${fields.name}`, 'Saved. Checking again now; new results in a couple of minutes.')
-      : await saveWatches(ws => [...ws, { id: `${slug(fields.name)}-${Math.random().toString(36).slice(2, 6)}`, ...fields }], `Add watch: ${fields.name}`, 'Added. The first results arrive in a couple of minutes.');
+      : await saveWatches(ws => [...ws, { id: watchId, ...fields }], `Add watch: ${fields.name}`, 'Added. The first results arrive in a couple of minutes.');
     $('#save-watch').disabled = false;
-    if (ok) $('#editor').close();
+    if (ok) {
+      removePhotoFiles(before.filter(p => !fields.photos.includes(p)));
+      $('#editor').close();
+    }
+  });
+
+  $('#add-photo').onclick = () => $('#photo-input').click();
+  $('#photo-input').onchange = async e => {
+    const files = [...e.target.files];
+    e.target.value = '';
+    for (const f of files) {
+      try {
+        const blob = await shrinkPhoto(f);
+        editorPhotos.push({ blob, url: URL.createObjectURL(blob) });
+      } catch (err) {
+        toast(err.message);
+      }
+    }
+    renderEditorPhotos();
+  };
+  $('#photo-list').addEventListener('click', e => {
+    const b = e.target.closest('[data-remove-photo]');
+    if (!b) return;
+    editorPhotos.splice(Number(b.dataset.removePhoto), 1);
+    renderEditorPhotos();
   });
 
   $('#delete-watch').onclick = async () => {
@@ -362,7 +465,10 @@ function wireEvents() {
     const w = watches.find(x => x.id === id);
     if (!w || !confirm(`Stop watching “${w.name}”?`)) return;
     const ok = await saveWatches(ws => ws.filter(x => x.id !== id), `Delete watch: ${w.name}`, 'Watch deleted.');
-    if (ok) $('#editor').close();
+    if (ok) {
+      removePhotoFiles(w.photos ?? []);
+      $('#editor').close();
+    }
   };
 
   $('#save-token').onclick = async () => {

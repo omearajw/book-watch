@@ -34,5 +34,7 @@ export async function details(listing) {
     sellerReviews: seller ? Number(seller[1]) : null,
     sellerStars: seller ? Math.round(Number(seller[2]) * 50) / 10 : null,
     reserved: /\\"is_reserved\\":true/.test(body),
+    // The page also carries photos of other sellers' items; the listing's own are marked item-photo-N.
+    photos: [...new Set([...body.matchAll(/data-testid="item-photo-\d+"><img src="([^"]+)"/g)].map(m => decode(m[1])))].slice(0, 5),
   };
 }

@@ -93,6 +93,13 @@
         <textarea name="exclude" rows="3" placeholder="furybound, bundle"></textarea>
       </label>
       <fieldset>
+        <legend>Reference photos</legend>
+        <span class="hint">Vinted listings under your price whose photos look like these get a "Looks like your photo" badge and move to the top. A look-alike doesn't send a notification on its own.</span>
+        <div class="photos" id="photo-list"></div>
+        <button type="button" class="btn" id="add-photo">Add a photo</button>
+        <input type="file" id="photo-input" accept="image/*" multiple hidden>
+      </fieldset>
+      <fieldset>
         <legend>Sites</legend>
         <div class="checks" id="site-checks"></div>
       </fieldset>

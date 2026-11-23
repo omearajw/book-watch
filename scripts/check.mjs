@@ -3,6 +3,7 @@ import { createHash } from 'crypto';
 import { sites } from '../src/sites/index.mjs';
 import { classify } from '../src/match.mjs';
 import { pushReady, sendPush, emailReady, sendEmail } from '../src/notify.mjs';
+import { LOOKS_LIKE, embedFile, bestMatch } from '../src/photo.mjs';
 import { config } from '../docs/config.js';
 
 const DRY = process.argv.includes('--dry-run');
@@ -55,6 +56,20 @@ for (const watch of watches) {
     }
   }
 
+  // Scores are cached per listing against a fingerprint of the reference photos, so
+  // replacing a photo rescores everything and an unchanged set costs nothing.
+  let refsKey = null;
+  let refVectors = null;
+  const loadRefs = () => (refVectors ??= Promise.all(watch.photos.map(embedFile)));
+  if (watch.photos?.length) {
+    try {
+      const files = await Promise.all(watch.photos.map(p => readFile(p)));
+      refsKey = hash(files.map(f => hash(f)).join());
+    } catch (e) {
+      console.log(`${watch.id}: reference photos unreadable: ${e.message}`);
+    }
+  }
+
   const relevant = [];
   for (const listing of found.values()) {
     const seen = (state.seen[listing.id] ??= { firstSeen: today });
@@ -63,7 +78,8 @@ for (const watch of watches) {
 
     let cls = classify(listing, watch);
     const site = sites[listing.source];
-    if (cls.relevant && cls.underPrice && !seen.details && site.details && detailBudget > 0) {
+    // Details saved before photos were collected count as missing, so they're read again once.
+    if (cls.relevant && cls.underPrice && !seen.details?.photos && site.details && detailBudget > 0) {
       detailBudget--;
       await sleep(1000);
       const d = await site.details(listing).catch(() => null);
@@ -71,6 +87,23 @@ for (const watch of watches) {
         seen.details = d;
         Object.assign(listing, d);
         cls = classify(listing, watch);
+      }
+    }
+
+    const cached = seen.photo?.[watch.id];
+    let photoScore = refsKey && cached?.refs === refsKey ? cached.score : undefined;
+    if (refsKey && photoScore === undefined && cls.relevant && cls.underPrice && listing.photos?.length) {
+      try {
+        photoScore = await bestMatch(await loadRefs(), listing.photos);
+        if (photoScore == null) {
+          // Vinted's photo links are signed and expire; drop them so the item page is read again.
+          delete seen.details.photos;
+        } else {
+          (seen.photo ??= {})[watch.id] = { refs: refsKey, score: photoScore };
+        }
+      } catch (e) {
+        console.log(`${watch.id}: photo matching failed: ${e.message}`);
+        refsKey = null;
       }
     }
 
@@ -93,14 +126,17 @@ for (const watch of watches) {
         sellerStars: listing.sellerStars ?? null,
         sellerReviews: listing.sellerReviews ?? null,
         reserved: listing.reserved ?? false,
+        photoScore: photoScore ?? null,
+        looksLike: (photoScore ?? 0) >= LOOKS_LIKE,
         firstSeen: seen.firstSeen,
       });
     }
   }
 
-  relevant.sort((a, b) => (a.total ?? Infinity) - (b.total ?? Infinity) || a.id.localeCompare(b.id));
+  relevant.sort((a, b) => b.looksLike - a.looksLike || (a.total ?? Infinity) - (b.total ?? Infinity) || a.id.localeCompare(b.id));
   matches.watches[watch.id] = { sites: siteStatus, listings: relevant.slice(0, 80) };
-  console.log(`${watch.id}: ${found.size} found, ${relevant.length} relevant, ${relevant.filter(r => r.alertable).length} under price, ${Object.entries(siteStatus).map(([k, v]) => `${k}=${v}`).join(' ')}`);
+  for (const r of relevant.filter(r => r.looksLike)) console.log(`LOOKS LIKE ${r.photoScore} ${gbp(r.total)} ${r.site}: ${r.title} ${r.url}`);
+  console.log(`${watch.id}: ${found.size} found, ${relevant.length} relevant, ${relevant.filter(r => r.alertable).length} under price, ${relevant.filter(r => r.photoScore != null).length} photo-scored (${relevant.filter(r => r.looksLike).length} look like), ${Object.entries(siteStatus).map(([k, v]) => `${k}=${v}`).join(' ')}`);
 }
 
 function describe({ listing, cls }) {

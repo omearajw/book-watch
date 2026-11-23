@@ -35,7 +35,15 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # The photo-matching model is about 350 MB; keep it between runs instead of downloading it every 15 minutes.
+      - uses: actions/cache@v6
+        with:
+          path: .cache/models
+          key: models-dinov2-base
       - run: npm ci
+        env:
+          # The photo model's runtime fetches GPU (CUDA) binaries on Linux by default; these runners have no GPU.
+          ONNXRUNTIME_NODE_INSTALL: skip
       - run: node scripts/check.mjs
         env:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}

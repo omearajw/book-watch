@@ -10,6 +10,7 @@
     "probe": "node scripts/probe.mjs"
   },
   "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
     "nodemailer": "^10.6.1",
     "web-push": "^4.0.0"
   }

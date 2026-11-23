@@ -14,6 +14,8 @@
   --ok: #2f7a4a;
   --warn: #b0482a;
   --warn-bg: #fbe9e3;
+  --photo: #1f5f7a;
+  --photo-bg: #e2f0f6;
   --shadow: 0 1px 2px rgb(42 34 48 / 6%), 0 4px 16px rgb(42 34 48 / 6%);
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -37,6 +39,8 @@
     --ok: #7cc795;
     --warn: #f0a084;
     --warn-bg: #3d2520;
+    --photo: #8fcbe3;
+    --photo-bg: #1f3540;
     --shadow: none;
     color-scheme: dark;
   }
@@ -150,6 +154,7 @@ h2.section-title { font: 600 15px/1.3 var(--sans); margin: 0 0 6px; }
 .badge.strong { color: var(--strong); background: var(--strong-bg); }
 .badge.possible { color: var(--maybe); background: var(--maybe-bg); }
 .badge.reserved { color: var(--muted); background: var(--surface-2); }
+.badge.photo { color: var(--photo); background: var(--photo-bg); }
 .empty { padding: 18px 16px 20px; color: var(--muted); font-size: 15px; margin: 0; }
 .more { display: block; width: 100%; border: 0; border-top: 1px solid var(--line); background: none; padding: 12px; color: var(--accent); font: 500 14px var(--sans); cursor: pointer; }
 
@@ -200,6 +205,15 @@ dialog legend { font-weight: 600; font-size: 14px; padding: 0; }
 .checks label, .switch { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 15px; margin: 0; }
 .switch { margin-top: 16px; }
 .checks input, .switch input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); }
+.photos { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.photos:empty { display: none; }
+.ref-photo { position: relative; width: 84px; height: 112px; border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.ref-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ref-photo button {
+  position: absolute; top: 4px; right: 4px; width: 28px; height: 28px; border: 0; border-radius: 50%;
+  background: rgb(20 14 24 / 65%); color: #fff; font-size: 17px; line-height: 1; cursor: pointer;
+}
+#add-photo { margin-top: 10px; }
 .sheet-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; }
 
 .toast {

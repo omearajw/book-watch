@@ -43,7 +43,10 @@
         "wob",
         "amazon"
       ],
-      "paused": false
+      "paused": false,
+      "photos": [
+        "data/photos/direbound-fairyloot-1.jpg"
+      ]
     }
   ]
 }
