@@ -358,8 +358,9 @@
       },
       "photo": {
         "direbound-fairyloot": {
-          "refs": "e9067ff531589387",
-          "score": 0.1
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.1,
+          "looksLike": false
         }
       }
     },
