@@ -5,7 +5,7 @@
         "vinted": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -937,6 +937,26 @@
           "postage": "£ 3.05 shipping",
           "condition": null,
           "url": "https://www.abebooks.co.uk/Direbound-Wolves-Ruin-Sorensen-Sable-Swiftstone/32473545030/bd",
+          "strength": "other",
+          "matchedTerm": null,
+          "underPrice": true,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-23"
+        },
+        {
+          "site": "AbeBooks",
+          "id": "abebooks:32431886049",
+          "title": "DIREBOUND (Wolves of Ruin) Trilogie",
+          "price": 20.94,
+          "total": 35.94,
+          "postage": "£ 15.00 shipping",
+          "condition": null,
+          "url": "https://www.abebooks.co.uk/DIREBOUND-Wolves-Ruin-Trilogie/32431886049/bd",
           "strength": "other",
           "matchedTerm": null,
           "underPrice": true,
