@@ -342,6 +342,30 @@
         "reserved": false
       }
     },
+    "vinted:10157369842": {
+      "firstSeen": "2026-11-23",
+      "lastSeen": "2026-11-23",
+      "details": {
+        "description": "Direbound Sable Sorensen - Some scuffs/marks - I purchased on here",
+        "sellerReviews": 170,
+        "sellerStars": 5,
+        "reserved": false,
+        "photos": [
+          "https://images1.vinted.net/t/02_00ce0_hnyeqm6a6CKHHRMdMt6JxL32/f800/c8287e48.webp?s=7509c731713e055cf52390feae7a9903e480ed07",
+          "https://images1.vinted.net/t/02_0255c_RfwLsDWVWkXt23ScmsoN5CW6/f800/4c5364f5.webp?s=c33894c6e14780100a597608d15322ca0c3cc0ac",
+          "https://images1.vinted.net/t/01_00986_WiAAwuKmSonQ3iXBJVJBi8kZ/f800/f32187cb.webp?s=d5cfd36cad6ad74c68a24cc77571586ec4d60ce7",
+          "https://images1.vinted.net/t/06_00aef_iubPGWrxkR96RswDjb2Qwcs8/f800/9cba183a.webp?s=32ab7dba0e67f28489d35fc35beeff571900b125",
+          "https://images1.vinted.net/t/06_00f82_fpTxvVTwx1RMncVUypcCywE5/f800/f7a0adc6.webp?s=ab6d6a5e147d9288d2449a3e6253a262b2ac6fb0"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.11,
+          "looksLike": false
+        }
+      }
+    },
     "vinted:10241783498": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-23",
@@ -388,6 +412,10 @@
       }
     },
     "vinted:10372884317": {
+      "firstSeen": "2026-11-23",
+      "lastSeen": "2026-11-23"
+    },
+    "vinted:10387323212": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-23"
     },
