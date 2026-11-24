@@ -5,7 +5,7 @@
         "vinted": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -245,6 +245,26 @@
           "sellerReviews": 0,
           "reserved": false,
           "photoScore": 0.08,
+          "looksLike": false,
+          "firstSeen": "2026-11-23"
+        },
+        {
+          "site": "Vinted",
+          "id": "vinted:10360064457",
+          "title": "Direbound Sable Sorensen signed copy",
+          "price": 9,
+          "total": 10.15,
+          "postage": "not included",
+          "condition": "Very good",
+          "url": "https://www.vinted.co.uk/items/10360064457-direbound-sable-sorensen-signed-copy",
+          "strength": "possible",
+          "matchedTerm": "signed",
+          "underPrice": true,
+          "alertable": true,
+          "sellerStars": 5,
+          "sellerReviews": 172,
+          "reserved": false,
+          "photoScore": 0.22,
           "looksLike": false,
           "firstSeen": "2026-11-23"
         },
