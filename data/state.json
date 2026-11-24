@@ -358,12 +358,26 @@
     },
     "vinted:10152910167": {
       "firstSeen": "2026-11-23",
-      "lastSeen": "2026-11-23",
+      "lastSeen": "2026-11-24",
       "details": {
         "description": "Direbound by Sable Sorensen Canadian Edition - Direbound by Sable Sorensen Canadian Edition. Never read. In excellent condition.",
-        "sellerReviews": 141,
+        "sellerReviews": 142,
         "sellerStars": 5,
-        "reserved": false
+        "reserved": false,
+        "photos": [
+          "https://images1.vinted.net/t/02_00f54_6Jx78Z4cKbjpkYNNX491UEXR/f800/ca98f8b2.webp?s=df7aecfce2a70f580914aed0058477f38b3dc4da",
+          "https://images1.vinted.net/t/06_003f2_1CPpYworzqwpmoxwSZBaW1wA/f800/8acc0fd9.webp?s=74524e3d294d15c02d7c1178a2dae7d1972b9b6f",
+          "https://images1.vinted.net/t/06_00c5b_9aNgANEtXti2qxBgNi41zf8s/f800/d84fafeb.webp?s=043b89dd03e40583fa165405435480b6f73f2b61",
+          "https://images1.vinted.net/t/01_0224a_QhibdJetHrv4D5D9t7MxyEYN/f800/b7ea44b2.webp?s=c7f9291fabc69722a23216d3809a45799cf39009",
+          "https://images1.vinted.net/t/02_00f95_muySRNnpC5ULw5NwoCtCLsTh/f800/321d46e4.webp?s=3ebd85344c457fd7b0997b0a808c8ac8bcbc7315"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.14,
+          "looksLike": false
+        }
       }
     },
     "vinted:10157369842": {
