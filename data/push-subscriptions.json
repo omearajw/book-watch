@@ -19,6 +19,16 @@
       "label": "Android",
       "addedAt": "2026-11-24T10:27:46.790Z",
       "testAt": "2026-11-24T10:27:46.790Z"
+    },
+    {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/duxrv2kdLpg:APA91bEqU4sgublx_XkPX04CotM3ldNIe7x-y93imoIRNZLMEAcwvNb3nyXR1e3IEojSsTYds-yHhrktQzAoWk5kPoYwiLSBhcjE2r-ICC6zUfupAQtm-fRb0EYGP8TTo6f6OpwoCEWL",
+      "keys": {
+        "p256dh": "BCwlOdihHtT8dt_PVVVtPFknHAJpGkdBjGwbO-7wBIxOxU9lMkwQnk_VGOovNFm6eng4GjP7F68EV84CIT_M4ZY",
+        "auth": "HNxLxu5qtlx0XKylUgngJQ"
+      },
+      "label": "Android",
+      "addedAt": "2026-11-24T10:29:06.855Z",
+      "testAt": "2026-11-24T10:29:06.863Z"
     }
   ]
 }
