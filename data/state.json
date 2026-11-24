@@ -1197,6 +1197,26 @@
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-24"
     },
+    "vinted:10913338281": {
+      "firstSeen": "2026-11-24",
+      "lastSeen": "2026-11-24",
+      "details": {
+        "description": "Direbound - Paperback",
+        "sellerReviews": 83,
+        "sellerStars": 5,
+        "reserved": false,
+        "photos": [
+          "https://images1.vinted.net/t/06_02549_2ohkYB1m4UNyMHLsmsrjCWzc/f800/dd06ae9a.webp?s=dcec80324e693d4de77d3043e21becb82534ef3e"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.15,
+          "looksLike": false
+        }
+      }
+    },
     "vinted:10923811444": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-23",

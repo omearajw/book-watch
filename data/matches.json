@@ -5,7 +5,7 @@
         "vinted": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -210,6 +210,26 @@
         },
         {
           "site": "Vinted",
+          "id": "vinted:10913338281",
+          "title": "Direbound",
+          "price": 8.49,
+          "total": 9.61,
+          "postage": "not included",
+          "condition": "Very good",
+          "url": "https://www.vinted.co.uk/items/10913338281-direbound",
+          "strength": "other",
+          "matchedTerm": null,
+          "underPrice": true,
+          "alertable": false,
+          "sellerStars": 5,
+          "sellerReviews": 83,
+          "reserved": false,
+          "photoScore": 0.15,
+          "looksLike": false,
+          "firstSeen": "2026-11-24"
+        },
+        {
+          "site": "Vinted",
           "id": "vinted:10886682466",
           "title": "Direbound - Sable Sorensen (Indie OOP)",
           "price": 8.88,
@@ -225,26 +245,6 @@
           "sellerReviews": 0,
           "reserved": false,
           "photoScore": 0.08,
-          "looksLike": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Vinted",
-          "id": "vinted:10241783498",
-          "title": "DIrebound Hardback",
-          "price": 9,
-          "total": 10.15,
-          "postage": "not included",
-          "condition": "Very good",
-          "url": "https://www.vinted.co.uk/items/10241783498-direbound-hardback",
-          "strength": "possible",
-          "matchedTerm": "sprayed",
-          "underPrice": true,
-          "alertable": true,
-          "sellerStars": 5,
-          "sellerReviews": 170,
-          "reserved": false,
-          "photoScore": 0.1,
           "looksLike": false,
           "firstSeen": "2026-11-23"
         },
