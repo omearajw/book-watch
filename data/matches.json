@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -1402,7 +1402,7 @@
           "price": 29.04,
           "total": 39.74,
           "postage": "£10.70 postage",
-          "condition": "Very Good · seller 98.9% (1478729)",
+          "condition": "Very Good · seller 98.9% (1478728)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
