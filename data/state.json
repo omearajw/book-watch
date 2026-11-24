@@ -1787,6 +1787,28 @@
       "firstSeen": "2026-11-24",
       "lastSeen": "2026-11-24"
     },
+    "vinted:10957559428": {
+      "firstSeen": "2026-11-24",
+      "lastSeen": "2026-11-24",
+      "details": {
+        "description": "Direbound - Read once Slight curve on cover as shown on photos",
+        "sellerReviews": 3,
+        "sellerStars": 5,
+        "reserved": false,
+        "photos": [
+          "https://images1.vinted.net/t/03_01758_7TSfx6gcWX5uTyUKiacD2GLA/f800/bc1b96bf.webp?s=afd4b79fb09ee14d54b8ed26c62ef54f0e19738a",
+          "https://images1.vinted.net/t/02_01b9e_A8L6noPbEPgd4tutDXVvhzwd/f800/3f76dfc7.webp?s=200ac3ce37c901e825001aaa100cb9d5cdf89d2b",
+          "https://images1.vinted.net/t/01_0211b_q6jj5vpwSBqCUCoETWZR85Cw/f800/57fe494d.webp?s=d8d13659f10198c4539a0ccb3080fdacd434e43a"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.14,
+          "looksLike": false
+        }
+      }
+    },
     "vinted:9964090703": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-23",
