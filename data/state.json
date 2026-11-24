@@ -111,13 +111,13 @@
     "abebooks:32517218963": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-24",
-      "alertedPrice": 10.75,
+      "alertedPrice": 10.55,
       "alertedAt": "2026-11-24"
     },
     "abebooks:32518741958": {
       "firstSeen": "2026-11-23",
       "lastSeen": "2026-11-24",
-      "alertedPrice": 10.75,
+      "alertedPrice": 10.55,
       "alertedAt": "2026-11-24"
     },
     "abebooks:32520652642": {
@@ -1828,5 +1828,7 @@
     "2606fb88a3cc421a": "2026-11-24T10:29:06.863Z",
     "63114dec99a853b6": "2026-11-24T10:29:33.833Z"
   },
-  "dead": []
+  "dead": [
+    "2606fb88a3cc421a"
+  ]
 }
