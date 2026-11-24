@@ -110,11 +110,15 @@
     },
     "abebooks:32517218963": {
       "firstSeen": "2026-11-23",
-      "lastSeen": "2026-11-24"
+      "lastSeen": "2026-11-24",
+      "alertedPrice": 10.75,
+      "alertedAt": "2026-11-24"
     },
     "abebooks:32518741958": {
       "firstSeen": "2026-11-23",
-      "lastSeen": "2026-11-24"
+      "lastSeen": "2026-11-24",
+      "alertedPrice": 10.75,
+      "alertedAt": "2026-11-24"
     },
     "abebooks:32520652642": {
       "firstSeen": "2026-11-23",
@@ -406,7 +410,9 @@
           "score": 0.1,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 10.15,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10360064457": {
       "firstSeen": "2026-11-23",
@@ -429,7 +435,9 @@
           "score": 0.22,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 10.15,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10370086236": {
       "firstSeen": "2026-11-24",
@@ -469,7 +477,9 @@
           "score": 0.59,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 11.2,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10415562535": {
       "firstSeen": "2026-11-23",
@@ -656,7 +666,9 @@
           "score": 0.05,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 32.2,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10545928792": {
       "firstSeen": "2026-11-23",
@@ -778,7 +790,9 @@
           "score": 0.13,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 30.1,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10625465281": {
       "firstSeen": "2026-11-23",
@@ -833,7 +847,9 @@
           "score": 0.13,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 24.85,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10668543394": {
       "firstSeen": "2026-11-23",
@@ -1091,7 +1107,9 @@
           "score": 0.22,
           "looksLike": false
         }
-      }
+      },
+      "alertedPrice": 30.1,
+      "alertedAt": "2026-11-24"
     },
     "vinted:10886050068": {
       "firstSeen": "2026-11-23",
@@ -1363,6 +1381,9 @@
       "lastSeen": "2026-11-24"
     }
   },
-  "tested": {},
+  "tested": {
+    "9cf0beadb5b89a4a": "2026-11-24T10:27:44.323Z",
+    "079323fcbcf156ba": "2026-11-24T10:27:46.790Z"
+  },
   "dead": []
 }
