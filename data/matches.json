@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -583,7 +583,7 @@
           "price": 5.8,
           "total": 13.8,
           "postage": "£8.00 postage",
-          "condition": "Good · seller 99.8% (13362)",
+          "condition": "Good · seller 99.8% (13364)",
           "url": "https://www.ebay.co.uk/itm/158334002416",
           "image": "https://i.ebayimg.com/images/g/s5oAAeSwjklrBHv9/s-l225.jpg",
           "strength": "other",
@@ -646,7 +646,7 @@
           "price": 6.14,
           "total": 15.75,
           "postage": "£9.61 postage",
-          "condition": "Very Good · seller 99.8% (25193)",
+          "condition": "Very Good · seller 99.8% (25194)",
           "url": "https://www.ebay.co.uk/itm/800344805154",
           "image": null,
           "strength": "other",
@@ -709,7 +709,7 @@
           "price": 8.4,
           "total": 16.53,
           "postage": "£8.13 postage",
-          "condition": "Good · seller 99.9% (32991)",
+          "condition": "Good · seller 99.9% (32993)",
           "url": "https://www.ebay.co.uk/itm/137479198136",
           "image": "https://i.ebayimg.com/images/g/s-UAAeSwYEBrBGXo/s-l225.jpg",
           "strength": "other",
@@ -1024,7 +1024,7 @@
           "price": 23.99,
           "total": 23.99,
           "postage": "free UK delivery",
-          "condition": "Very Good · seller 99.6% (11990229)",
+          "condition": "Very Good · seller 99.6% (11990286)",
           "url": "https://www.ebay.co.uk/itm/146633413156",
           "image": "https://i.ebayimg.com/images/g/VUAAAeSwbNFpN2X~/s-l225.jpg",
           "strength": "other",
@@ -1465,7 +1465,7 @@
           "price": 33.67,
           "total": 43.08,
           "postage": "£9.41 postage",
-          "condition": "Brand New · seller 99.4% (5524)",
+          "condition": "Brand New · seller 99.4% (5530)",
           "url": "https://www.ebay.co.uk/itm/137471584888",
           "image": "https://i.ebayimg.com/images/g/cGkAAeSwhZRrBa7s/s-l225.jpg",
           "strength": "other",
