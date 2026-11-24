@@ -160,6 +160,7 @@ for (const watch of watches) {
         postage: listing.postage,
         condition: listing.condition ?? null,
         url: listing.url,
+        image: listing.image ?? null,
         strength: cls.strength,
         matchedTerm: cls.matchedTerm,
         underPrice: cls.underPrice,

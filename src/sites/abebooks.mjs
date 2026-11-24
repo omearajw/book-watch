@@ -22,6 +22,7 @@ export async function search(query) {
       total: price != null && ship != null ? +(price + ship).toFixed(2) : price,
       postage: shipText ? decode(shipText) : 'unknown',
       url: `https://www.abebooks.co.uk${path}`,
+      image: chunk.match(/<img[^>]+src="(https:[^"]+)"/)?.[1] ?? null,
     });
   }
   return { status, listings };

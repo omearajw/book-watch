@@ -165,8 +165,8 @@ function listingRow(l, w) {
   const meta = [l.site, l.condition, l.sellerStars != null ? `seller ${l.sellerStars}★ (${l.sellerReviews})` : null].filter(Boolean).map(esc).join(' · ');
   const postage = l.postage === 'not included' ? '+ postage' : l.postage === 'free UK delivery' || /free/i.test(l.postage ?? '') ? 'free postage' : l.total !== l.price ? 'incl. postage' : '';
   return `<li class="listing"><a href="${esc(l.url)}" target="_blank" rel="noopener">
-    <div class="price">${esc(gbp(l.total))}${postage ? `<small>${esc(postage)}</small>` : ''}</div>
-    <div class="body">${badges.join('')}<p class="name">${esc(l.title)}</p><p class="meta">${meta}</p></div>
+    <div class="thumb">${l.image ? `<img src="${esc(l.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ''}</div>
+    <div class="body"><p class="price">${esc(gbp(l.total))}${postage ? `<small>${esc(postage)}</small>` : ''}</p>${badges.join('')}<p class="name">${esc(l.title)}</p><p class="meta">${meta}</p></div>
   </a>${flagged ? `<button class="not-this" data-not-this="${esc(l.id)}">Not this cover</button>` : ''}</li>`;
 }
 
@@ -432,6 +432,9 @@ function wireEvents() {
       $('#settings').scrollIntoView({ behavior: 'smooth' });
     }
   });
+
+  // A listing photo that won't load (sold, or the site's link expired) leaves the plain tile.
+  $('#watches').addEventListener('error', e => { if (e.target.closest?.('.thumb')) e.target.remove(); }, true);
 
   $('#add-watch').onclick = () => openEditor(null);
   $('#editor').addEventListener('click', e => {

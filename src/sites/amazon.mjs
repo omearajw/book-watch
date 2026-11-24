@@ -25,6 +25,7 @@ export async function search(query) {
         total: price,
         postage: 'see listing',
         url: `https://www.amazon.co.uk/dp/${asin}`,
+        image: chunk.match(/<img[^>]+class="s-image"[^>]*src="([^"]+)"|<img[^>]+src="([^"]+)"[^>]*class="s-image"/)?.slice(1).find(Boolean) ?? null,
       });
     }
   }

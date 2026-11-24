@@ -19,6 +19,7 @@ export async function search(query) {
         total: price,
         postage: 'free UK delivery',
         url: `https://www.worldofbooks.com${p.url.split('?')[0]}`,
+        image: p.image ?? null,
       };
     });
   return { status, listings };
