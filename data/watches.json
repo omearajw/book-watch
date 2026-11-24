@@ -39,6 +39,7 @@
       "alertOn": "possible",
       "sites": [
         "vinted",
+        "ebay",
         "abebooks",
         "wob",
         "amazon"

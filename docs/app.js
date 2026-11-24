@@ -2,7 +2,7 @@ import { config } from './config.js';
 
 const { owner, repo, branch } = config;
 const API = `https://api.github.com/repos/${owner}/${repo}`;
-const SITE_NAMES = { vinted: 'Vinted', abebooks: 'AbeBooks', wob: 'World of Books', amazon: 'Amazon' };
+const SITE_NAMES = { vinted: 'Vinted', ebay: 'eBay', abebooks: 'AbeBooks', wob: 'World of Books', amazon: 'Amazon' };
 const TOKEN_KEY = 'bookwatch.token';
 const SHOWN = 15;
 
