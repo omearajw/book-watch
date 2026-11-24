@@ -971,7 +971,7 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
-          "photoScore": null,
+          "photoScore": 0.08,
           "looksLike": false,
           "firstSeen": "2026-11-24"
         },
@@ -1286,7 +1286,7 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
-          "photoScore": null,
+          "photoScore": 0.09,
           "looksLike": false,
           "firstSeen": "2026-11-24"
         },
@@ -1454,7 +1454,7 @@
           "sellerStars": null,
           "sellerReviews": null,
           "reserved": false,
-          "photoScore": null,
+          "photoScore": 0.08,
           "looksLike": false,
           "firstSeen": "2026-11-24"
         },

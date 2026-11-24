@@ -495,7 +495,20 @@
     },
     "ebay:168820115079": {
       "firstSeen": "2026-11-24",
-      "lastSeen": "2026-11-24"
+      "lastSeen": "2026-11-24",
+      "details": {
+        "description": "Thanks for viewing our Ebay listing! If you are not satisfied with your order, just contact us and we will address any issue. If you have any specific question about any of our items prior to ordering feel free to ask.",
+        "photos": [
+          "https://i.ebayimg.com/images/g/tC8AAeSwihBqvoRK/s-l1600.jpg"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.08,
+          "looksLike": false
+        }
+      }
     },
     "ebay:168879807254": {
       "firstSeen": "2026-11-24",
@@ -557,11 +570,45 @@
     },
     "ebay:257669385547": {
       "firstSeen": "2026-11-24",
-      "lastSeen": "2026-11-24"
+      "lastSeen": "2026-11-24",
+      "details": {
+        "description": "\"Direbound Book 1: The Wolves of Ruin\" by Sable Sorensen is a trade paperback book published by Swiftstone Media. Set in a fantasy world with elements of romance, the book is written in English and is expected to be released in 2025. This out-of-print book is highly sought after by fans of the genre, promising an engaging and immersive reading experience filled with adventure, magic, and passion.",
+        "photos": [
+          "https://i.ebayimg.com/images/g/FAEAAeSw1yVqd3Pc/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/qwIAAeSwfwBqd3Pc/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/o5MAAeSwg5hqd3Pc/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/AOsAAeSwSKxqd3Pb/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/v6QAAeSwWXtqd3Pc/s-l1600.jpg"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.08,
+          "looksLike": false
+        }
+      }
     },
     "ebay:287025431192": {
       "firstSeen": "2026-11-24",
-      "lastSeen": "2026-11-24"
+      "lastSeen": "2026-11-24",
+      "details": {
+        "description": "Never read minor shelf wear see photos",
+        "photos": [
+          "https://i.ebayimg.com/images/g/yZYAAeSw6whpSINw/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/ww0AAeSwPGtpSINw/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/fqYAAeSwpklpSINw/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/eYQAAeSwR3ppSINw/s-l1600.jpg",
+          "https://i.ebayimg.com/images/g/vPkAAeSwRw5pSINw/s-l1600.jpg"
+        ]
+      },
+      "photo": {
+        "direbound-fairyloot": {
+          "refs": "9e4dbe8d02201d65",
+          "score": 0.09,
+          "looksLike": false
+        }
+      }
     },
     "ebay:287480095613": {
       "firstSeen": "2026-11-24",
