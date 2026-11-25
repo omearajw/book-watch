@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -541,7 +541,7 @@
           "price": 5.77,
           "total": 13.77,
           "postage": "£8.00 postage",
-          "condition": "Good · seller 99.8% (13382)",
+          "condition": "Good · seller 99.8% (13384)",
           "url": "https://www.ebay.co.uk/itm/158334002416",
           "image": "https://i.ebayimg.com/images/g/FPgAAeSwq0JrBch3/s-l225.jpg",
           "strength": "other",
@@ -604,7 +604,7 @@
           "price": 1.73,
           "total": 14.12,
           "postage": "£12.39 postage",
-          "condition": "Very Good · seller 99.7% (15143)",
+          "condition": "Very Good · seller 99.7% (15144)",
           "url": "https://www.ebay.co.uk/itm/307266902039",
           "image": "https://i.ebayimg.com/images/g/BZ4AAeSwLSdrBgrZ/s-l225.jpg",
           "strength": "other",
@@ -730,7 +730,7 @@
           "price": 8.59,
           "total": 16.73,
           "postage": "£8.14 postage",
-          "condition": "Very Good · seller 99.9% (7171)",
+          "condition": "Very Good · seller 99.9% (7173)",
           "url": "https://www.ebay.co.uk/itm/168339726592",
           "image": null,
           "strength": "other",
@@ -751,7 +751,7 @@
           "price": 8.81,
           "total": 16.97,
           "postage": "£8.16 postage",
-          "condition": "Very Good · seller 99.9% (12564)",
+          "condition": "Very Good · seller 99.9% (12566)",
           "url": "https://www.ebay.co.uk/itm/227316041814",
           "image": null,
           "strength": "other",
@@ -1123,27 +1123,6 @@
           "firstSeen": "2026-11-23"
         },
         {
-          "site": "Vinted",
-          "id": "vinted:10152910167",
-          "title": "Direbound by Sable Sorensen Canadian Edition",
-          "price": 25,
-          "total": 26.95,
-          "postage": "not included",
-          "condition": "Very good",
-          "url": "https://www.vinted.co.uk/items/10152910167-direbound-by-sable-sorensen-canadian-edition",
-          "image": "https://images1.vinted.net/t/02_00f54_6Jx78Z4cKbjpkYNNX491UEXR/310x430/ca98f8b2.webp?s=63c404dc42eda07277b4b4432f3f2222e7f13d36",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
-          "alertable": false,
-          "sellerStars": 5,
-          "sellerReviews": 142,
-          "reserved": false,
-          "photoScore": 0.14,
-          "looksLike": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
           "site": "AbeBooks",
           "id": "abebooks:32431558217",
           "title": "DIREBOUND (Wolves of Ruin) Trilogie",
@@ -1423,7 +1402,7 @@
           "price": 29.04,
           "total": 39.74,
           "postage": "£10.70 postage",
-          "condition": "Very Good · seller 98.9% (1479565)",
+          "condition": "Very Good · seller 98.9% (1479604)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
@@ -1688,6 +1667,27 @@
           "photoScore": null,
           "looksLike": false,
           "firstSeen": "2026-11-24"
+        },
+        {
+          "site": "Vinted",
+          "id": "vinted:10568750044",
+          "title": "Dire Bound set signed",
+          "price": 67,
+          "total": 71.05,
+          "postage": "not included",
+          "condition": "New without tags",
+          "url": "https://www.vinted.co.uk/items/10568750044-dire-bound-set-signed",
+          "image": "https://images1.vinted.net/t/06_02255_2nuAnLa2pCMc58WFBzBGGs7A/310x430/6cd73ba5.webp?s=27c6559d44174ad34c858c4d9e564ef44b9e6b26",
+          "strength": "possible",
+          "matchedTerm": "signed",
+          "underPrice": false,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-23"
         }
       ]
     }
