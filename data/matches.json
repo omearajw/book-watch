@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -258,27 +258,6 @@
           "sellerReviews": 0,
           "reserved": false,
           "photoScore": 0.08,
-          "looksLike": false,
-          "firstSeen": "2026-11-23"
-        },
-        {
-          "site": "Vinted",
-          "id": "vinted:10360064457",
-          "title": "Direbound Sable Sorensen signed copy",
-          "price": 9,
-          "total": 10.15,
-          "postage": "not included",
-          "condition": "Very good",
-          "url": "https://www.vinted.co.uk/items/10360064457-direbound-sable-sorensen-signed-copy",
-          "image": "https://images1.vinted.net/t/02_01bd2_FztQbi9gMmikprnwUkjE5zvD/310x430/fd8b1e82.webp?s=4b11c44d01253b56f57a0c0cb2eaf787ef4a41b7",
-          "strength": "possible",
-          "matchedTerm": "signed",
-          "underPrice": true,
-          "alertable": true,
-          "sellerStars": 5,
-          "sellerReviews": 172,
-          "reserved": false,
-          "photoScore": 0.22,
           "looksLike": false,
           "firstSeen": "2026-11-23"
         },
@@ -625,7 +604,7 @@
           "price": 1.73,
           "total": 14.12,
           "postage": "£12.39 postage",
-          "condition": "Very Good · seller 99.7% (15150)",
+          "condition": "Very Good · seller 99.7% (15153)",
           "url": "https://www.ebay.co.uk/itm/307266902039",
           "image": "https://i.ebayimg.com/images/g/BZ4AAeSwLSdrBgrZ/s-l225.jpg",
           "strength": "other",
@@ -793,7 +772,7 @@
           "price": 8.81,
           "total": 16.97,
           "postage": "£8.16 postage",
-          "condition": "Very Good · seller 99.9% (12574)",
+          "condition": "Very Good · seller 99.9% (12575)",
           "url": "https://www.ebay.co.uk/itm/227316041814",
           "image": null,
           "strength": "other",
@@ -961,7 +940,7 @@
           "price": 8.43,
           "total": 21.93,
           "postage": "£13.50 postage",
-          "condition": "Good · seller 99.0% (20891)",
+          "condition": "Good · seller 99.0% (20892)",
           "url": "https://www.ebay.co.uk/itm/168820115079",
           "image": "https://i.ebayimg.com/images/g/tC8AAeSwihBqvoRK/s-l225.jpg",
           "strength": "other",
@@ -1423,7 +1402,7 @@
           "price": 29.04,
           "total": 39.74,
           "postage": "£10.70 postage",
-          "condition": "Very Good · seller 98.9% (1479913)",
+          "condition": "Very Good · seller 98.9% (1479943)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
@@ -1688,6 +1667,27 @@
           "photoScore": null,
           "looksLike": false,
           "firstSeen": "2026-11-24"
+        },
+        {
+          "site": "Vinted",
+          "id": "vinted:10568750044",
+          "title": "Dire Bound set signed",
+          "price": 67,
+          "total": 71.05,
+          "postage": "not included",
+          "condition": "New without tags",
+          "url": "https://www.vinted.co.uk/items/10568750044-dire-bound-set-signed",
+          "image": "https://images1.vinted.net/t/06_02255_2nuAnLa2pCMc58WFBzBGGs7A/310x430/6cd73ba5.webp?s=27c6559d44174ad34c858c4d9e564ef44b9e6b26",
+          "strength": "possible",
+          "matchedTerm": "signed",
+          "underPrice": false,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-23"
         }
       ]
     }
