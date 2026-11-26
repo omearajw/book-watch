@@ -304,27 +304,6 @@
           "firstSeen": "2026-11-23"
         },
         {
-          "site": "Vinted",
-          "id": "vinted:10973135625",
-          "title": "Dire Bound - Sable Sorensen",
-          "price": 9,
-          "total": 10.15,
-          "postage": "not included",
-          "condition": "New with tags",
-          "url": "https://www.vinted.co.uk/items/10973135625-dire-bound-sable-sorensen",
-          "image": "https://images1.vinted.net/t/06_01f46_yCR3bGzd4Y66UhTNvYW6zeZK/310x430/53a51cbb.webp?s=420bcc144b23b6e0b8fd19223311dbac8ff9f2e5",
-          "strength": "other",
-          "matchedTerm": null,
-          "underPrice": true,
-          "alertable": false,
-          "sellerStars": 4.9,
-          "sellerReviews": 642,
-          "reserved": false,
-          "photoScore": 0.18,
-          "looksLike": false,
-          "firstSeen": "2026-11-25"
-        },
-        {
           "site": "World of Books",
           "id": "wob:15410048303377",
           "title": "Dire Bound",
@@ -604,7 +583,7 @@
           "price": 5.73,
           "total": 13.68,
           "postage": "£7.95 postage",
-          "condition": "Good · seller 99.8% (20468)",
+          "condition": "Good · seller 99.8% (20469)",
           "url": "https://www.ebay.co.uk/itm/366457913116",
           "image": "https://i.ebayimg.com/images/g/2tYAAeSwVZNrBwPh/s-l225.jpg",
           "strength": "other",
@@ -1402,7 +1381,7 @@
           "price": 28.85,
           "total": 39.48,
           "postage": "£10.63 postage",
-          "condition": "Very Good · seller 98.9% (1480752)",
+          "condition": "Very Good · seller 98.9% (1480755)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
@@ -1688,6 +1667,27 @@
           "photoScore": null,
           "looksLike": false,
           "firstSeen": "2026-11-23"
+        },
+        {
+          "site": "eBay",
+          "id": "ebay:357547483989",
+          "title": "Direbound Sable Sorensen With Sprayed Edges",
+          "price": 73.5,
+          "total": 76.44,
+          "postage": "£2.94 postage",
+          "condition": "New · seller 100.0% (39)",
+          "url": "https://www.ebay.co.uk/itm/357547483989",
+          "image": "https://i.ebayimg.com/images/g/lCsAAeSwJS5otFJN/s-l225.jpg",
+          "strength": "possible",
+          "matchedTerm": "sprayed",
+          "underPrice": false,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-24"
         }
       ]
     }
