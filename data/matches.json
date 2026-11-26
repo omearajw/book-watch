@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -814,7 +814,7 @@
           "price": 19.28,
           "total": 19.28,
           "postage": "free UK delivery",
-          "condition": "Like New · seller 99.1% (89924)",
+          "condition": "Like New · seller 99.1% (89925)",
           "url": "https://www.ebay.co.uk/itm/198667439974",
           "image": "https://i.ebayimg.com/images/g/29AAAeSwt1Zqtwsx/s-l225.jpg",
           "strength": "other",
@@ -919,7 +919,7 @@
           "price": 21.87,
           "total": 21.87,
           "postage": "free UK delivery",
-          "condition": "New · seller 99.1% (89924)",
+          "condition": "New · seller 99.1% (89925)",
           "url": "https://www.ebay.co.uk/itm/800719108763",
           "image": "https://i.ebayimg.com/images/g/zsoAAeSwfJNqt-v1/s-l225.jpg",
           "strength": "other",
@@ -1024,7 +1024,7 @@
           "price": 23.99,
           "total": 23.99,
           "postage": "free UK delivery",
-          "condition": "Very Good · seller 99.5% (11992384)",
+          "condition": "Very Good · seller 99.5% (11992399)",
           "url": "https://www.ebay.co.uk/itm/146633413156",
           "image": "https://i.ebayimg.com/images/g/VUAAAeSwbNFpN2X~/s-l225.jpg",
           "strength": "other",
@@ -1360,7 +1360,7 @@
           "price": 28.85,
           "total": 39.48,
           "postage": "£10.63 postage",
-          "condition": "Very Good · seller 98.9% (1480755)",
+          "condition": "Very Good · seller 98.9% (1480761)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
@@ -1564,13 +1564,34 @@
           "firstSeen": "2026-11-23"
         },
         {
+          "site": "Vinted",
+          "id": "vinted:10947944857",
+          "title": "Dire Bound – Deluxe Signed Edition",
+          "price": 50.18,
+          "total": 53.39,
+          "postage": "not included",
+          "condition": "New without tags",
+          "url": "https://www.vinted.co.uk/items/10947944857-dire-bound-deluxe-signed-edition",
+          "image": "https://images1.vinted.net/t/05_00ca7_nc3XC8pAm2XCi14C2khnKVgD/310x430/acf01d46.webp?s=41fbe142990795532d26b9058d67033e09b15301",
+          "strength": "possible",
+          "matchedTerm": "signed",
+          "underPrice": false,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-26"
+        },
+        {
           "site": "eBay",
           "id": "ebay:157991003374",
           "title": "Direbound - Signed Exclusive - Sprayed Edges",
           "price": 52.7,
           "total": 56.08,
           "postage": "£3.38 postage",
-          "condition": "Good · seller 100.0% (979)",
+          "condition": "Good · seller 100.0% (980)",
           "url": "https://www.ebay.co.uk/itm/157991003374",
           "image": "https://i.ebayimg.com/images/g/G88AAeSw5d9qKw6d/s-l225.jpg",
           "strength": "possible",
@@ -1667,27 +1688,6 @@
           "photoScore": null,
           "looksLike": false,
           "firstSeen": "2026-11-24"
-        },
-        {
-          "site": "Vinted",
-          "id": "vinted:10798933590",
-          "title": "Direbound Exclusive limited edition fantasy romance adult",
-          "price": 77.2,
-          "total": 81.76,
-          "postage": "not included",
-          "condition": "New without tags",
-          "url": "https://www.vinted.co.uk/items/10798933590-direbound-exclusive-limited-edition-fantasy-romance-adult",
-          "image": "https://images1.vinted.net/t/03_00271_e85eLv3fQmayZ6JShcUvUepP/310x430/9ea7e538.webp?s=d32df7cc1ea19fb0e924cd4f60611389229b6cf9",
-          "strength": "possible",
-          "matchedTerm": "exclusive",
-          "underPrice": false,
-          "alertable": false,
-          "sellerStars": null,
-          "sellerReviews": null,
-          "reserved": false,
-          "photoScore": null,
-          "looksLike": false,
-          "firstSeen": "2026-11-23"
         }
       ]
     }
