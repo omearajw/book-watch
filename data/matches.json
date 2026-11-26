@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -457,7 +457,7 @@
           "price": 7.66,
           "total": 19.52,
           "postage": "£11.86 postage",
-          "condition": "Good · seller 99.8% (6164)",
+          "condition": "Good · seller 99.8% (6165)",
           "url": "https://www.ebay.co.uk/itm/127745476178",
           "image": "https://i.ebayimg.com/images/g/t4AAAeSwCUBqoxyG/s-l225.jpg",
           "strength": "other",
@@ -767,6 +767,27 @@
         },
         {
           "site": "AbeBooks",
+          "id": "abebooks:32431886049",
+          "title": "DIREBOUND (Wolves of Ruin) Trilogie",
+          "price": 19.05,
+          "total": 34.05,
+          "postage": "£ 15.00 shipping",
+          "condition": null,
+          "url": "https://www.abebooks.co.uk/DIREBOUND-Wolves-Ruin-Trilogie/32431886049/bd",
+          "image": "https://pictures.abebooks.com/isbn/9783442302437-uk._SL300_.jpg",
+          "strength": "other",
+          "matchedTerm": null,
+          "underPrice": true,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-23"
+        },
+        {
+          "site": "AbeBooks",
           "id": "abebooks:32393100836",
           "title": "Dire Bound: Roman - Hast du das Herz eines Wolfs? - Das Romantasy-Must-Read des Jahres - Limitierte Deluxe-Edition mit Wendeumschlag und exklusiver Character-Card (Die Wolves-of-Ruin Reihe, Band 1)",
           "price": 20.68,
@@ -835,7 +856,7 @@
           "price": 28.85,
           "total": 39.48,
           "postage": "£10.63 postage",
-          "condition": "Very Good · seller 98.9% (1481005)",
+          "condition": "Very Good · seller 98.9% (1481017)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
