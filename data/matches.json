@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -454,9 +454,9 @@
           "site": "eBay",
           "id": "ebay:168820115079",
           "title": "Direbound by Sable Sorensen",
-          "price": 8.38,
-          "total": 21.8,
-          "postage": "£13.42 postage",
+          "price": 7.62,
+          "total": 21,
+          "postage": "£13.38 postage",
           "condition": "Good · seller 99.0% (20913)",
           "url": "https://www.ebay.co.uk/itm/168820115079",
           "image": "https://i.ebayimg.com/images/g/tC8AAeSwihBqvoRK/s-l225.jpg",
@@ -541,7 +541,7 @@
           "price": 23.99,
           "total": 23.99,
           "postage": "free UK delivery",
-          "condition": "Very Good · seller 99.5% (11994746)",
+          "condition": "Very Good · seller 99.5% (11994796)",
           "url": "https://www.ebay.co.uk/itm/146633413156",
           "image": "https://i.ebayimg.com/images/g/VUAAAeSwbNFpN2X~/s-l225.jpg",
           "strength": "other",
