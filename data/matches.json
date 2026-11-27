@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -226,7 +226,7 @@
           "price": 1.72,
           "total": 14.04,
           "postage": "£12.32 postage",
-          "condition": "Very Good · seller 99.7% (15283)",
+          "condition": "Very Good · seller 99.7% (15285)",
           "url": "https://www.ebay.co.uk/itm/307266902039",
           "image": "https://i.ebayimg.com/images/g/bKcAAeSwy6ZrCf82/s-l225.jpg",
           "strength": "other",
@@ -373,7 +373,7 @@
           "price": 8.76,
           "total": 16.87,
           "postage": "£8.11 postage",
-          "condition": "Very Good · seller 99.9% (12619)",
+          "condition": "Very Good · seller 99.9% (12620)",
           "url": "https://www.ebay.co.uk/itm/227316041814",
           "image": null,
           "strength": "other",
@@ -598,6 +598,27 @@
           "firstSeen": "2026-11-23"
         },
         {
+          "site": "AbeBooks",
+          "id": "abebooks:32565973982",
+          "title": "Dire Bound",
+          "price": 21.6,
+          "total": 28.47,
+          "postage": "£ 6.87 shipping",
+          "condition": null,
+          "url": "https://www.abebooks.co.uk/Dire-Bound-Sorensen-Sable-Requited/32565973982/bd",
+          "image": "https://pictures.abebooks.com/isbn/9780316601382-uk._SL300_.jpg",
+          "strength": "other",
+          "matchedTerm": null,
+          "underPrice": true,
+          "alertable": false,
+          "sellerStars": null,
+          "sellerReviews": null,
+          "reserved": false,
+          "photoScore": null,
+          "looksLike": false,
+          "firstSeen": "2026-11-27"
+        },
+        {
           "site": "World of Books",
           "id": "wob:11103303565585",
           "title": "Dire Bound",
@@ -730,7 +751,7 @@
           "price": 28.87,
           "total": 39.51,
           "postage": "£10.64 postage",
-          "condition": "Very Good · seller 98.9% (1481442)",
+          "condition": "Very Good · seller 98.9% (1481449)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
