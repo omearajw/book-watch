@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "blocked"
+        "amazon": "ok"
       },
       "listings": [
         {
@@ -331,7 +331,7 @@
           "price": 8.35,
           "total": 16.44,
           "postage": "£8.09 postage",
-          "condition": "Good · seller 99.8% (20512)",
+          "condition": "Good · seller 99.8% (20513)",
           "url": "https://www.ebay.co.uk/itm/366457913116",
           "image": "https://i.ebayimg.com/images/g/4qIAAeSwLf5rCbWL/s-l225.jpg",
           "strength": "other",
@@ -352,7 +352,7 @@
           "price": 8.54,
           "total": 16.63,
           "postage": "£8.09 postage",
-          "condition": "Very Good · seller 99.9% (7209)",
+          "condition": "Very Good · seller 99.9% (7211)",
           "url": "https://www.ebay.co.uk/itm/168339726592",
           "image": null,
           "strength": "other",
@@ -373,7 +373,7 @@
           "price": 8.76,
           "total": 16.87,
           "postage": "£8.11 postage",
-          "condition": "Very Good · seller 99.9% (12632)",
+          "condition": "Very Good · seller 99.9% (12634)",
           "url": "https://www.ebay.co.uk/itm/227316041814",
           "image": null,
           "strength": "other",
@@ -751,7 +751,7 @@
           "price": 28.87,
           "total": 39.51,
           "postage": "£10.64 postage",
-          "condition": "Very Good · seller 98.9% (1481533)",
+          "condition": "Very Good · seller 98.9% (1481538)",
           "url": "https://www.ebay.co.uk/itm/388539974988",
           "image": "https://i.ebayimg.com/images/g/yWUAAeSwWfppOUVA/s-l225.jpg",
           "strength": "other",
