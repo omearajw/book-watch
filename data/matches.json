@@ -6,7 +6,7 @@
         "ebay": "ok",
         "abebooks": "ok",
         "wob": "ok",
-        "amazon": "ok"
+        "amazon": "blocked"
       },
       "listings": [
         {
@@ -205,7 +205,7 @@
           "price": 5.62,
           "total": 13.57,
           "postage": "£7.95 postage",
-          "condition": "Good · seller 99.9% (13512)",
+          "condition": "Good · seller 99.9% (13513)",
           "url": "https://www.ebay.co.uk/itm/158334002416",
           "image": "https://i.ebayimg.com/images/g/fuUAAeSwr31rCbr2/s-l225.jpg",
           "strength": "other",
@@ -793,7 +793,7 @@
           "price": 33.48,
           "total": 42.83,
           "postage": "£9.35 postage",
-          "condition": "Brand New · seller 99.4% (5694)",
+          "condition": "Brand New · seller 99.4% (5697)",
           "url": "https://www.ebay.co.uk/itm/137471584888",
           "image": "https://i.ebayimg.com/images/g/KBUAAeSwHQtrCZ6m/s-l225.jpg",
           "strength": "other",
